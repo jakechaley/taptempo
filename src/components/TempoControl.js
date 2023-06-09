@@ -3,17 +3,20 @@ import React from "react";
 class TempoControl extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      clickCount: 0
+    }
   }
 
   handleClick = () => {
-    console.log("Click")
+    this.setState({clickCount: this.state.clickCount + 1})
   }
 
   render() {
     return (
       <React.Fragment>
         <button onClick={this.handleClick}>Tap</button>
+        <div> {this.state.clickCount}</div>
       </React.Fragment>
     )
   }
