@@ -14,12 +14,11 @@ class TempoControl extends React.Component {
     this.setState({clickCount: this.state.clickCount + 1})
     if (this.state.clickCount === 0) {
       setTimeout(() => {
-        this.setState({hasBeenFifteenSeconds: true})
+        this.setState({hasBeenFifteenSeconds: true});
+        this.setState({disabled: true})
         console.log("It's been 15 seconds!");
       }, 15000)
-    } else if (this.state.hasBeenFifteenSeconds === true) {
-      this.setState({disabled: true})
-    }
+    } 
   }   
 
   render() {
